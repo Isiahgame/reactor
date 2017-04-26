@@ -5,11 +5,24 @@
 </template>
 
 <script>
+const INTERVAL = require('../constants').INTERVAL
+
 export default {
   name: 'dashboard',
   data () {
     return {
       msg: 'Welcome to Reactor'
+    }
+  },
+  mounted () {
+    setInterval(this.update, INTERVAL)
+  },
+  methods: {
+    update () {
+      console.log('updated')
+    },
+    addItem (item) {
+      console.log(item)
     }
   }
 }
